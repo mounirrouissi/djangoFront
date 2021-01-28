@@ -1,0 +1,37 @@
+.moved{
+padding-left: 20px;
+}
+
+.reservationText{
+  color-adjust: unset;
+  text-size-adjust: 52;
+  text-decoration: solid;
+  border-color: hotpink;
+  text-decoration-color: goldenrod;
+  background-color: #29394b;
+}
+a {
+  padding-top: 5%;
+  flex: 1;
+  display: inline-flex ;
+  flex-flow: column wrap;
+  align-content: flex-start;
+}
+div,label{
+  font-family: Georgia, 'Times New Roman', Times, serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(235, 232, 217);
+}
+.container{
+  border-radius: 20px;
+border-color: silver;
+  background-image: url("./images/pic01.jpg");
+  background-color: rgb(255, 208, 151);
+}
+h1
+{
+  font-family:'Times New Roman', Times, serif;
+  justify-content: center;
+  background-color: rgb(83, 62, 62);
+  align-content: center;
+  color: beige;
+}

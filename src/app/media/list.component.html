@@ -1,0 +1,39 @@
+<h1>Filter By:</h1>
+<div class="moved">
+  <label>Status :</label>
+  <select [(ngModel)]="sortByStatus" >
+    <option value='All' selected>All</option>
+    <option value="Available">Available </option>
+    <option value="Saturated">Saturated</option>
+  </select>
+<div class="moved">
+  <label>Name: </label><input type="text" [(ngModel)]="name">
+
+
+  <button (click)="search()" >Search </button>
+</div>
+</div>
+<!-- <div>
+  <label></label>
+  <input type="date" [(ngModel)]="todayDate">
+</div> -->
+
+<section>
+  <a  *ngFor="let restaurant of restaurants|filtering:sortByStatus:'status'|filtering:searchedName:'name'">
+
+     <div class="container">
+
+       <app-reservation hidden
+        [restaurant]="restaurant">
+      </app-reservation>
+
+       <app-item
+        [restaurant]="restaurant"
+        [ngClass]="{'medium-movies':restaurant.medium === 'Movies' , 'medium-series':restaurant.medium === 'Series'}"
+          (delete)="onrestaurantDelete($event)">
+        </app-item>
+     </div>
+   </a>
+</section>
+
+ <router-outlet></router-outlet>

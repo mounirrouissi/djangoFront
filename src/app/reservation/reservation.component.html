@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-3"></div>
+    <div class="col-md-6">
+      <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && reserve()" novalidate class="feedback-form" >
+        <!-- Name -->
+
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="text"
+                 id="name"
+                 class="form-control"
+                 name="name"
+                 placeholder="Your name"
+                 [(ngModel)]="client.name"
+                 #name="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
+                 required/>
+          <!-- input validation group -->
+          <div *ngIf="f.submitted && name.invalid" class="invalid-input">
+            <!-- individual validation errors -->
+            <div *ngIf="name.errors?.required">Field is required</div>
+          </div>
+        </div>
+         <!-- Email -->
+         <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text"
+                 id="email"
+                 class="form-control"
+                 name="email"
+                 placeholder="Your email"
+                 [(ngModel)]="client.email"
+                 #email="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                 required email/>
+          <!-- input validation group -->
+          <div *ngIf="f.submitted && email.invalid" class="invalid-input">
+            <!-- individual validation errors -->
+            <div *ngIf="email.errors?.required">Field is required</div>
+            <div *ngIf="email.errors?.email">Field is not a valid email</div>
+          </div>
+        </div>
+        <!-- place -->
+        <div class="form-group">
+          <label for="place">Places</label>
+          <select type="text"
+                 id="place"
+                 class="form-control"
+                 name="place"
+                 placeholder="Your place"
+                 [(ngModel)]="client.places"
+                 #place="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && place.invalid }"
+                 required place>
+                 <option value="1">1 place</option>
+                 <option value="2">2 places</option>
+        </select>
+          <!-- input validation group -->
+          <div *ngIf="f.submitted && place.invalid" class="invalid-input">
+            <!-- individual validation errors -->
+            <div *ngIf="place.errors?.required">Field is required</div>
+            <div *ngIf="place.errors?.place">Field is not a valid place</div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-info pull-right" >
+          <i class="fa fa-envelope-o"></i>
+          <span> Reserve</span>
+        </button>
+
+      </form>
+      <button class="btn btn-info pull-left"  (click)="goBack()" >
+        <i class="fa fa-envelope-o"></i>
+        <span> Back</span></button>
+    </div>
+    <div class="offset-3"></div>
+  </div>
+</div>>
