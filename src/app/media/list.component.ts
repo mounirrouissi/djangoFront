@@ -47,8 +47,7 @@ Festivals:Festival[]=[
   }
  public getAllFestivals() {
     this.service.getAllFestivals().subscribe(
-      res=>{this.Festivals=res;},
-      err=>{alert("searching for Festivals")}
+      res=>{this.Festivals=res;}
     );
   }
 
