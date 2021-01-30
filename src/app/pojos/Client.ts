@@ -1,8 +1,9 @@
 export interface Client
 
 {
-  name:string;
-  email:string;
+
   places:number;
   category:string;
+  name:string;
+  city:string;
 }

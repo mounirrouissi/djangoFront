@@ -30,7 +30,8 @@ this.message="Message Sent Successfuly";
         alert("An error has occurred while sending feedback");
       }
     );
-  }}
+  }
+}
 
 
 

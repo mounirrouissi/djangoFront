@@ -11,10 +11,14 @@ export class ApiService {
 
 
   getAllReservations():Observable<Client[]> {
-    return this.http.get<Client[]>(this.BASE_URL + '/reservations');
+    return this.http.get<Client[]>(this.BASE_URL + '/reservations/');
   }
   private BASE_URL = "http://localhost:8000";
+
+
+
   public ALL_FESTIVALS_URL = `${this.BASE_URL}/festivals/`;
+  
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   deleteFestival(id: any) :Observable<any>{
@@ -25,11 +29,13 @@ export class ApiService {
     return this.http.post<any>(this.ALL_FESTIVALS_URL+"/feedback",model);
   }
 
-  postReservation(name:string,client:Client):Observable<any>{
-    return this.http.post<any>(this.ALL_FESTIVALS_URL+"/reservation/"+name,client);
+  postReservation(client:Client):Observable<any>{
+    return this.http.post<any>(this.BASE_URL+"/reservations/",client);
   }
 
   constructor(private http:HttpClient) { }
+
+
   getAllFestivals(): Observable<Festival[]> {
     return this.http.get<Festival[]>(this.ALL_FESTIVALS_URL,{headers: this.httpHeaders});;
   }

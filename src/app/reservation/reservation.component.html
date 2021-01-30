@@ -22,23 +22,23 @@
             <div *ngIf="name.errors?.required">Field is required</div>
           </div>
         </div>
-         <!-- Email -->
+         <!-- city -->
          <div class="form-group">
-          <label for="email">Email</label>
+          <label for="city">city</label>
           <input type="text"
-                 id="email"
+                 id="city"
                  class="form-control"
-                 name="email"
-                 categoryholder="Your email"
-                 [(ngModel)]="client.email"
-                 #email="ngModel"
-                 [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
-                 required email/>
+                 name="city"
+                 categoryholder="Your city"
+                 [(ngModel)]="client.city"
+                 #city="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && city.invalid }"
+                 required city/>
           <!-- input validation group -->
-          <div *ngIf="f.submitted && email.invalid" class="invalid-input">
+          <div *ngIf="f.submitted && city.invalid" class="invalid-input">
             <!-- individual validation errors -->
-            <div *ngIf="email.errors?.required">Field is required</div>
-            <div *ngIf="email.errors?.email">Field is not a valid email</div>
+            <div *ngIf="city.errors?.required">Field is required</div>
+            <div *ngIf="city.errors?.city">Field is not a valid city</div>
           </div>
         </div>
         <!-- category -->
@@ -54,8 +54,9 @@
                    #category="ngModel"
                    [ngClass]="{ 'is-invalid': f.submitted && category.invalid }"
                    required category>
-                   <option value="1">enfant(dn)</option>
-                   <option value="2">adult(dn)</option>
+                   <option value="1">enfant(10dn)</option>
+                   <option value="2">adult(50dn)</option>
+                   <option value="2">etudiant(dn)</option>
           </select>
           </div>
           <label for="category">places</label>

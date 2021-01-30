@@ -17,10 +17,10 @@ export class ReservationComponent implements OnInit {
 name:string="";
   constructor(private service:ApiService,private route:ActivatedRoute,private location:Location){}
   client: Client = {
-    name: '',
-    email:'',
+    places: 0,
     category: '',
-    places: 0
+    name: '',
+    city:'',
 
   };
   ngOnInit(): void {
@@ -43,7 +43,7 @@ this.name=rest.name;
 }
   } */
   console.log("fdsfdsfdsf"+id);
-  this.service.postReservation(id,this.client).subscribe
+  this.service.postReservation(this.client).subscribe
 (
 res=>{alert("the reservation addded sucessfuly");},
 err=>{alert('"problem occured'+this.name);}
