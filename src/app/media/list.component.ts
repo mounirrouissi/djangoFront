@@ -1,4 +1,4 @@
-import { Restaurant } from './../pojos/Restaurant';
+import { Festival } from '../pojos/Festival';
 import { ApiService } from './../services/api.service';
 import { logging } from 'protractor';
 import { Component, OnInit } from '@angular/core';
@@ -11,14 +11,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
   serachedDate: String;
-restaurants:Restaurant[]=[];
+Festivals:Festival[]=[];
+
   ngOnInit(): void {
-   this.getAllRestaurants();
+   this.getAllFestivals();
   }
- public getAllRestaurants() {
-    this.service.getAllRestaurants().subscribe(
-      res=>{this.restaurants=res;},
-      err=>{alert("searching for restaurants")}
+ public getAllFestivals() {
+    this.service.getAllFestivals().subscribe(
+      res=>{this.Festivals=res;},
+      err=>{alert("searching for Festivals")}
     );
   }
 
@@ -33,15 +34,15 @@ searchedStatus='';
 sortByStatus='';
 
 
-onrestaurantDelete(restaurant:Restaurant) {
+onFestivalDelete(Festival:Festival) {
   if(confirm("Are you sure you want to delete this note?")){
-    this.service.deleteRestaurant(restaurant.id).subscribe(
+ /*    this.service.deleteFestival(Festival.id).subscribe(
       res =>{
-        let indexOfRestaurant = this.restaurants.indexOf(restaurant);
-        this.restaurants.splice(indexOfRestaurant, 1);
+        let indexOfFestival = this.Festivals.indexOf(Festival);
+        this.Festivals.splice(indexOfFestival, 1);
       },
       err=>{alert("An error has occurred deleting the note");}
-    );
+    ); */
   }
 
 }

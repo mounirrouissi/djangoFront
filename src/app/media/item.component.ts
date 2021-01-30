@@ -1,4 +1,4 @@
-import { Restaurant } from './../pojos/Restaurant';
+import { Festival } from '../pojos/Festival';
 import {Component, EventEmitter, Input, OnInit, Output} from'@angular/core'
 import { ApiService } from '../services/api.service';
 
@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.service';
     })
 export class ItemComponent implements OnInit
 {
-  restaurants: Restaurant[]=[];
+  Festivals: Festival[]=[];
 
 constructor( private service:ApiService){}
 ngOnInit(): void {
@@ -18,9 +18,9 @@ ngOnInit(): void {
 }
 
 
-@Input() restaurant;
+@Input() Festival;
 @Output() delete=new EventEmitter();
 Delete(){
-  this.delete.emit(this.restaurant);
+  this.delete.emit(this.Festival);
 }
 }

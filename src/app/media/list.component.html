@@ -19,18 +19,18 @@
 </div> -->
 
 <section>
-  <a  *ngFor="let restaurant of restaurants|filtering:sortByStatus:'status'|filtering:searchedName:'name'">
+  <a  *ngFor="let Festival of Festivals">
 
      <div class="container">
 
        <app-reservation hidden
-        [restaurant]="restaurant">
+        [Festival]="Festival">
       </app-reservation>
 
        <app-item
-        [restaurant]="restaurant"
-        [ngClass]="{'medium-movies':restaurant.medium === 'Movies' , 'medium-series':restaurant.medium === 'Series'}"
-          (delete)="onrestaurantDelete($event)">
+        [Festival]="Festival"
+        [ngClass]="{'medium-movies':Festival.medium === 'Movies' , 'medium-series':Festival.medium === 'Series'}"
+          (delete)="onFestivalDelete($event)">
         </app-item>
      </div>
    </a>

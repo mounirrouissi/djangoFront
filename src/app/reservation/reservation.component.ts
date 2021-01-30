@@ -3,7 +3,7 @@ import { Client } from '../pojos/Client';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
-import { Restaurant } from '../pojos/Restaurant';
+import { Festival } from '../pojos/Festival';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,30 +12,30 @@ import { Location } from '@angular/common';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
-  @Input() restaurant;
-  restaurants:Restaurant[]=[];
+  @Input() Festival;
+  Festivals:Festival[]=[];
 name:string="";
   constructor(private service:ApiService,private route:ActivatedRoute,private location:Location){}
   client: Client = {
     name: '',
     email:'',
-   /*  category: '', */
-    places: 0,
-    RestaurantName:''
+    category: '',
+    places: 0
+
   };
   ngOnInit(): void {
-    this.getAllRestaurants();
+    this.getAllFestivals();
    }
-  public getAllRestaurants() {
-     this.service.getAllRestaurants().subscribe(
-       res=>{this.restaurants=res;},
-       err=>{alert("searching for restaurants")}
+  public getAllFestivals() {
+     this.service.getAllFestivals().subscribe(
+       res=>{this.Festivals=res;},
+       err=>{alert("searching for Festivals")}
      );
    }
 reserve():void
 {
   let id: string = this.route.snapshot.params.id;
- /*  for(let rest of this.restaurants)
+ /*  for(let rest of this.Festivals)
   {
 if(rest.id === id)
 {

@@ -22,9 +22,9 @@ div,label{
   background-color: rgb(235, 232, 217);
 }
 .container{
-  border-radius: 20px;
+  border-radius: 50%;
 border-color: silver;
-  background-image: url("./images/pic01.jpg");
+
   background-color: rgb(255, 208, 151);
 }
 h1

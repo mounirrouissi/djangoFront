@@ -11,7 +11,7 @@
                  id="name"
                  class="form-control"
                  name="name"
-                 placeholder="Your name"
+                 categoryholder="Your name"
                  [(ngModel)]="client.name"
                  #name="ngModel"
                  [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
@@ -29,7 +29,7 @@
                  id="email"
                  class="form-control"
                  name="email"
-                 placeholder="Your email"
+                 categoryholder="Your email"
                  [(ngModel)]="client.email"
                  #email="ngModel"
                  [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
@@ -41,26 +41,41 @@
             <div *ngIf="email.errors?.email">Field is not a valid email</div>
           </div>
         </div>
-        <!-- place -->
+        <!-- category -->
         <div class="form-group">
-          <label for="place">Places</label>
+          <div>
+            <label for="category">Category</label>
+            <select type="text"
+                   id="category"
+                   class="form-control"
+                   name="category"
+                   categoryholder="Your category"
+                   [(ngModel)]="client.category"
+                   #category="ngModel"
+                   [ngClass]="{ 'is-invalid': f.submitted && category.invalid }"
+                   required category>
+                   <option value="1">enfant(dn)</option>
+                   <option value="2">adult(dn)</option>
+          </select>
+          </div>
+          <label for="category">places</label>
           <select type="text"
-                 id="place"
+                 id="category"
                  class="form-control"
-                 name="place"
-                 placeholder="Your place"
+                 name="category"
+                 categoryholder="Your category"
                  [(ngModel)]="client.places"
-                 #place="ngModel"
-                 [ngClass]="{ 'is-invalid': f.submitted && place.invalid }"
-                 required place>
-                 <option value="1">1 place</option>
-                 <option value="2">2 places</option>
+                 #category="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && category.invalid }"
+                 required category>
+                 <option value="1">1 place(dn)</option>
+                 <option value="2">2 places(dn)</option>
         </select>
           <!-- input validation group -->
-          <div *ngIf="f.submitted && place.invalid" class="invalid-input">
+          <div *ngIf="f.submitted && category.invalid" class="invalid-input">
             <!-- individual validation errors -->
-            <div *ngIf="place.errors?.required">Field is required</div>
-            <div *ngIf="place.errors?.place">Field is not a valid place</div>
+            <div *ngIf="category.errors?.required">Field is required</div>
+            <div *ngIf="category.errors?.category">Field is not a valid category</div>
           </div>
         </div>
 
