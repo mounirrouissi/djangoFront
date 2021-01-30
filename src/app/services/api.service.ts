@@ -18,7 +18,7 @@ export class ApiService {
 
 
   public ALL_FESTIVALS_URL = `${this.BASE_URL}/festivals/`;
-  
+
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   deleteFestival(id: any) :Observable<any>{
