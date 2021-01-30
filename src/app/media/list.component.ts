@@ -11,10 +11,39 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
   serachedDate: String;
-Festivals:Festival[]=[];
+Festivals:Festival[]=[
+
+  {
+    "name": "purple",
+    "status": "Full",
+    "city": "Tunis",
+
+  },
+
+  {
+    "name": "The great festival",
+    "status": "Available",
+    "city": "Manouba",
+
+  },
+
+  {
+    "name": "The One and Only",
+    "status": "Full",
+    "city": "Manouba",
+
+  },
+
+  {
+    "name": "purple",
+    "status": "minivan",
+    "city": "Manouba",
+
+  },
+];
 
   ngOnInit(): void {
-   this.getAllFestivals();
+/*    this.getAllFestivals(); */
   }
  public getAllFestivals() {
     this.service.getAllFestivals().subscribe(
